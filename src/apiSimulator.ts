@@ -37,6 +37,3 @@ export function fetchProductReviews(productId: number): Promise<Review[]> {
     }, 1500);
   });
 }
-
-fetchProductCatalog().then(products => console.log(products));
-fetchProductReviews(1).then(reviews => console.log(reviews));
