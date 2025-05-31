@@ -1,4 +1,4 @@
-const chanceSuccess = 0.8;
+const CHANCE_SUCCESS: number = 0.8;
 
 export interface Product {
   id: number;
@@ -29,7 +29,7 @@ export class DataError extends Error {
 export function fetchProductCatalog(): Promise<Product[]> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < chanceSuccess) {
+      if (Math.random() < CHANCE_SUCCESS) {
         resolve([
           { id: 1, name: 'Laptop', price: 1200 },
           { id: 2, name: 'Headphones', price: 200 }
@@ -44,7 +44,7 @@ export function fetchProductCatalog(): Promise<Product[]> {
 export function fetchProductReviews(productId: number): Promise<Review[]> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < chanceSuccess) {
+      if (Math.random() < CHANCE_SUCCESS) {
         resolve(
           [
             { id: 1, review: 'This is great.' },
@@ -67,7 +67,7 @@ export function fetchProductReviews(productId: number): Promise<Review[]> {
 export function fetchSalesReport(): Promise<Report> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < chanceSuccess) {
+      if (Math.random() < CHANCE_SUCCESS) {
         resolve({ totalSales: 525.25, unitsSold: 5, averagePrice: 150 });
       } else {
         reject(new DataError(`Failed to fetch sales report`));
